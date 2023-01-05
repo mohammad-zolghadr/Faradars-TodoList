@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { increase } from "./redux/action";
 
 const Blogs = () => {
@@ -13,6 +14,7 @@ const Blogs = () => {
       <button
         onClick={() => {
           dispatch(increase());
+          toast.success("Hello");
         }}
       >
         Increase
