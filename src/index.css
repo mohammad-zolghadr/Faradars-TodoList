@@ -30,7 +30,7 @@
 
 html{
     font-family: nf;
-    background-color: vat(--bg-color);
+    background-color: var(--bg-color);
 }
 
 button {

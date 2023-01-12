@@ -33,7 +33,15 @@
 
 .bnItem span{
     margin:6px 5px 0;
+}
+
+
+.bnItemOff{
     color: var(--pale-color);
+}
+
+.bnItemOn{
+    color: var(--primary-color);
 }
 
 @media (min-width:600px){
