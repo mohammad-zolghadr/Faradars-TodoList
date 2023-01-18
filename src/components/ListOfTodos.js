@@ -9,7 +9,7 @@ import emptyList from "../assets/images/emptyList.svg";
 import Work from "./Work";
 
 const ListOfTodos = () => {
-  const loadedItems = [];
+  const loadedItems = [252];
   return (
     <div className={style.wlContainer}>
       {loadedItems.length > 0 ? (
