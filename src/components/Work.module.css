@@ -1,0 +1,78 @@
+.wliContainer{
+    background-color: var(--bg-color);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex : 1 1 230px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.wliDone{
+    opacity: 0.5;
+    text-decoration: line-through;
+    text-decoration-color: var(--primary-color);
+}
+
+
+.wliContainer img{
+    width:20px;
+}
+
+.wliPriority{
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 5px 50px;
+    position: absolute;
+    left: -35px;
+    top: 20px;
+    transform: rotate(-45deg);
+}
+
+.wliTime{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 5px;
+}
+
+.wliTime span{
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    margin-right: 5px;
+    padding-top: 5px;
+}
+
+.wliContainer p{
+    color: var(--pale-color);
+    font-size: 0.85rem;
+    margin: 5px;
+}
+
+.wliIcons {
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+}
+
+.wliIcons img{
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.wliTrash{
+    width: 15px !important;
+}
+
+.wliIcons img:hover{
+    opacity: 0.5;
+}
+
+.wliContainer h2{
+    font-size: 1.2rem;
+}
