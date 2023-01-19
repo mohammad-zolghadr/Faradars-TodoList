@@ -28,6 +28,10 @@
 
 }
 
+.Toastify__toast-body{
+    font-family: nf !important;
+}
+
 html{
     font-family: nf;
     background-color: var(--bg-color);

@@ -1,10 +1,21 @@
 import React from "react";
 
 import style from "./AddTodo.module.css";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddTodo = () => {
+  const submitForm = (e) => {
+    e.preventDefault();
+
+    // Success
+    toast.success("موفقیت آمیز بود");
+    // Error
+    toast.error("عملیات با خطا مواجه شد");
+  };
+
   return (
-    <form>
+    <form onSubmit={submitForm}>
       <div>
         <label>عنوان</label>
         <input type="text" placeholder="مثلا ورزش کردن..." />
