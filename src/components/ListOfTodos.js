@@ -7,14 +7,16 @@ import emptyList from "../assets/images/emptyList.svg";
 
 // Components
 import Work from "./Work";
+import { useSelector } from "react-redux";
 
 const ListOfTodos = () => {
-  const loadedItems = [252];
+  const reduxData = useSelector((state) => state.workAddReducer);
+  const loadedItems = reduxData.workList;
   return (
     <div className={style.wlContainer}>
       {loadedItems.length > 0 ? (
         // Show Items
-        loadedItems.map((item) => <Work />)
+        loadedItems.map((item) => <Work key={item.id} data={item} />)
       ) : (
         // Show EmptyList
         <div className={style.wlEmptyList}>
