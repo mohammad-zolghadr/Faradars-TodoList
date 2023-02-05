@@ -1,14 +1,5 @@
 const initState = {
-  workList: [
-    {
-      id: 1,
-      title: "کار جدید",
-      desc: "همینجوری یه متن مینویسمهمینجوری یه متن مینویسمهمینجوری یه متن مینویسمهمینجوری یه متن مینویسمهمینجوری یه متن مینویسمهمینجوری یه متن مینویسم",
-      priority: "high",
-      time: 5,
-      isDone: false,
-    },
-  ],
+  workList: [],
 };
 
 const reduxReducer = (state = initState, action) => {

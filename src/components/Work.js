@@ -8,12 +8,20 @@ import IconCheckOn from "../assets/images/check-on.svg";
 import IconCheckOff from "../assets/images/check-off.svg";
 import IconTrash from "../assets/images/trash.svg";
 
+// Redux
+import { removeWork, doneWork, undoneWork } from "../redux/reduxAction";
+import { useDispatch, useSelector } from "react-redux";
+
 const Work = (props) => {
   const { id, title, desc, priority, time, isDone } = props.data;
   const [descControl, setDescControl] = useState({
     desc: "",
     showPoints: true,
   });
+  const [isDoneState, setIsDoneState] = useState(isDone);
+
+  const dispatch = useDispatch();
+  const reduxData = useSelector((state) => state.workAddReducer);
 
   useEffect(() => {
     setDescControl({ desc: desc.substring(0, 100), showPoints: true });
@@ -35,7 +43,7 @@ const Work = (props) => {
   return (
     <div
       className={
-        isDone
+        isDoneState
           ? `${style.wliContainer} ${style.wliDone}`
           : `${style.wliContainer}`
       }
@@ -56,8 +64,22 @@ const Work = (props) => {
         </span>
       </p>
       <div className={style.wliIcons}>
-        <img src={IconCheckOff} />
-        <img src={IconTrash} className={style.wliTrash} />
+        <img
+          onClick={() => {
+            isDoneState
+              ? dispatch(undoneWork(props.data))
+              : dispatch(doneWork(props.data));
+            setIsDoneState(
+              reduxData.workList.find((item) => item.id === id).isDone
+            );
+          }}
+          src={IconCheckOff}
+        />
+        <img
+          onClick={() => dispatch(removeWork(props.data))}
+          src={IconTrash}
+          className={style.wliTrash}
+        />
       </div>
     </div>
   );
