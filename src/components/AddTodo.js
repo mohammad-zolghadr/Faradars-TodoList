@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import style from "./AddTodo.module.css";
 import { toast } from "react-toastify";
@@ -13,6 +13,10 @@ const AddTodo = () => {
   const [desc, setDesc] = useState("");
   const [time, setTime] = useState("");
   const [priority, setPriority] = useState("");
+
+  useEffect(() => {
+    document.title = "اضافه کردن کار جدید";
+  }, []);
 
   const dispatch = useDispatch();
 
